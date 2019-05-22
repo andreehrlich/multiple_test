@@ -1,0 +1,81 @@
+@font-face {
+    font-family: DIN;
+    src: url("./fonts/D-DIN.otf");
+}
+
+
+body {
+  color: white;
+  font-family: DIN;
+  max-width: 1440px;
+  max-height: 900px;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 90%;
+  margin: 10px;
+  /* color: white; */
+}
+
+.headline {
+  font-size: 150px;
+  text-align: center;
+  margin: 40px;
+}
+
+
+.hero {
+  background-color: purple;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 700px;
+  width: 1440px;
+  /* z-index: 0; */
+}
+
+.menu {
+  background-color: blue;
+  /* Menu anchored by top-right orner */
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  /* hide by width = 0 */
+  width: 0;
+  height: 900px;
+  z-index: 1;
+  transition: 1s;
+
+}
+
+.menu.show {
+  width: 700px;
+}
+
+.menu-close, .menu-open {
+  color: white;
+}
+
+.show {
+  transition: 1s;
+}
+
+
+#readmore {
+  background-color: black;
+  padding: 40px;
+  z-index: -1;
+  position: relative;
+  top: -300px;
+}
+
+#readmore.show{
+  top: 0;
+}
