@@ -3,8 +3,8 @@
     src: url("./fonts/D-DIN.otf");
 }
 
-
 body {
+  background-color: purple;
   color: white;
   font-family: DIN;
   max-width: 1440px;
@@ -12,14 +12,36 @@ body {
   margin: 0;
 }
 
-.header {
+.a {
+  color: white;
+}
+
+
+.flex-row {
   display: flex;
   flex-flow: row;
   flex-wrap: nowrap;
   justify-content: space-between;
+
+}
+
+.flex-column {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* hero */
+.hero {
+  background-color: purple;
+  max-height: 700px;
+  max-width: 1440px;
+}
+
+.header {
   width: 90%;
   margin: 10px;
-  /* color: white; */
 }
 
 .headline {
@@ -29,53 +51,73 @@ body {
 }
 
 
-.hero {
-  background-color: purple;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 700px;
-  width: 1440px;
-  /* z-index: 0; */
-}
 
-.menu {
+/* menu w/ transition */
+
+#menu {
   background-color: blue;
+  height: 900px;
+
   /* Menu anchored by top-right orner */
-  position: absolute;
+  position: fixed;
   right: 0;
   top: 0;
 
-  /* hide by width = 0 */
-  width: 0;
-  height: 900px;
-  z-index: 1;
-  transition: 1s;
+  /* hover over rest of content */
+  z-index: 3;
+
+  width: 0; /* initially hidden */
+  transition: width 1s;
 
 }
 
-.menu.show {
+/* show menu by increasing its width from 0 */
+#menu.show {
   width: 700px;
 }
 
-.menu-close, .menu-open {
-  color: white;
+#menu-close {
+  margin-top: 26px;
+  margin-right: 40px;
+  border: 1px solid white;
+  height: 45px;
+  width: 45px;
+  padding: 15px
+
 }
 
-.show {
-  transition: 1s;
+#menu-close a {
+  margin: auto;
+}
+
+#menu-list {
+  list-style: none;
+}
+
+#menu-list li {
+  font-size: 20px;
+  padding: 10px;
 }
 
 
-#readmore {
+/* description w/ transition */
+#description {
   background-color: black;
   padding: 40px;
-  z-index: -1;
-  position: relative;
-  top: -300px;
+  height: 120px;
+  /* => total height = 200px */
 }
 
-#readmore.show{
+#description-cover {
+  /* slide down 200px to uncover description */
+  background-color: purple;
+  height: 200px;
+
+  position: relative;
+  top: -200px;
+  transition: top 1s;
+}
+
+#description-cover.show {
   top: 0;
 }

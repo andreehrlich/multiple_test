@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Multiple Inc Test</title>
+  <title>Multiple Inc Test by Andre Ehrlich</title>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js"></script>
-
 </head>
 <body>
 
-  <div id="menu" class="menu">
-    <a onclick="hide('menu')" class="menu-close">Exit</a>
-    <ol>
-      <li>Home</li>
-      <li>CEO LETTER</li>
-      <li>ANOTHER ITEM</li>
-    </ol>
+  <!-- menu -->
+  <div id="menu">
+    <div class="flex-row">
+
+      <ul id="menu-list">
+        <li>HOME</li>
+        <li>CEO LETTER</li>
+        <li>ANOTHER ITEM</li>
+      </ul>
+
+      <div id="menu-close">
+        <a onclick="hide('menu')" >Exit</a>
+      </div>
+
+    </div>
   </div>
 
-  <div class="hero">
-    <div class="header">
+  <!-- hero -->
+  <div class="hero flex-column">
+
+    <div class="header flex-row">
       <div class="logo">Logo</div>
       <div class="title">Title</div>
       <a id="menu-open" onclick="show('menu')">Menu</a>
@@ -28,15 +37,21 @@
       HEADLINE WHICH MAY HAVE MULTIPLE LINES
     </div>
 
-    <a onclick="show('readmore')">Read + More</a>
+    <a class="description-show" onclick="show('description-cover')">Read + More</a>
+
   </div>
 
-  <div id="readmore">
+
+  <!-- description -->
+  <div id="description">
     <div class="info">
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-    <a onclick="hide('readmore')">Exit</a>
+    <a onclick="hide('description-cover')" class="menu-close">Exit</a>
   </div>
+
+  <div id="description-cover"></div>
+
 
 </body>
 </html>
