@@ -1,4 +1,5 @@
 function show(id) {
+  console.log("HEHEHL")
   document.getElementById(id).classList.add('show');
 }
 

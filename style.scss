@@ -1,3 +1,4 @@
+// load fonts
 @font-face {
   font-family: DIN;
   src: url("./fonts/D-DIN.otf");
@@ -6,6 +7,8 @@
   font-family: DIN-BOLD;
   src: url("./fonts/D-DIN-Bold.otf");
 }
+
+// icons styling
 .icon {
   height: 25px;
   width: 25px;
@@ -19,12 +22,17 @@
   margin: 0 25px 0 10px;
 }
 
+// general
 body {
   background-color: purple;
   color: white;
+
+  // intended screen size
   max-width: 1440px;
   max-height: 900px;
   margin: 0;
+
+  // typography
   font-family: DIN;
   font-size: 40px;
   line-height: 1.5em;
@@ -34,28 +42,41 @@ body {
   color: white;
 }
 
-.flex-row {
-  display: flex;
-  flex-flow: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+.flex {
+
+  &-row {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  &-column {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
-.flex-column {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  align-items: center;
-}
+
+
+// buttons styling
 
 .button-close {
   height: 60px;
   width: 60px;
+
   margin-top: 26px;
   margin-right: 40px;
   padding: 15px;
+
   border: 1px solid white;
 }
 
+
+// component styling
+
+// hero
 .header {
   width: 90%;
 }
@@ -67,52 +88,66 @@ body {
 
 #headline {
   margin: 80px;
+
   font-family: DIN-BOLD;
   font-size: 140px;
   text-align: center;
   line-height: normal;
+
 }
 
+// menu
 #menu {
   background-color: blue;
+
   height: 900px;
-  width: 0;
-  /* initially hidden */
+  width: 0; /* initially hidden */
+
   position: fixed;
   right: 0;
   top: 0;
   z-index: 3;
+
   transition: 1s;
+
   /* show menu by increasing its width from 0 */
-}
-#menu.show {
-  width: 700px;
-}
-#menu-list {
-  list-style: none;
-}
-#menu-list li {
-  padding: 15px;
+  &.show {
+    width: 700px;
+  }
+
+  &-list {
+    list-style: none;
+
+    li {
+      padding: 15px;
+    }
+  }
+
 }
 
+
+// description w/ cover
 #description {
   background-color: black;
   height: 500px;
   padding: 80px;
-}
-#description .button-close {
-  margin: 20px auto;
-}
-#description-cover {
-  background-color: purple;
-  transition: 1s;
-  position: relative;
-  bottom: 665px;
-  height: 665px;
-}
-#description-cover.show {
-  bottom: 0;
-  height: 0;
-}
 
-/*# sourceMappingURL=style.css.map */
+  .button-close {
+    margin: 20px auto;
+  }
+
+  &-cover {
+    background-color: purple;
+    transition: 1s;
+    position: relative;
+    bottom: 665px;
+    height: 665px;
+
+    &.show {
+      bottom: 0;
+      height: 0;
+    }
+  }
+
+
+}
